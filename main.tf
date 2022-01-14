@@ -91,6 +91,8 @@ resource "aws_route_table" "hashicat" {
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.hashicat.id
+  }
+  tags = {
     Department = "myDepartment"
     Billable = "no"
   }
@@ -216,9 +218,6 @@ resource "null_resource" "configure-cat-app" {
 
 resource "tls_private_key" "hashicat" {
   algorithm = "RSA"
-  tags = {
-    Department = "myDepartment"
-    Billable = "no"
   }
 }
 
