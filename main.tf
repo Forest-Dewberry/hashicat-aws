@@ -168,10 +168,6 @@ resource "null_resource" "configure-cat-app" {
     build_number = timestamp()
   }
 
-  tags = {
-    Department = "myDepartment"
-    Billable = "no"
-  }
 
   provisioner "file" {
     source      = "files/"
